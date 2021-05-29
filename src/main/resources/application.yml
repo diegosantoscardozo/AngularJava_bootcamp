@@ -7,13 +7,13 @@ server:
 spring:
   datasource:    
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://10.31.22.198:5432/postgres
-    username: psp_dba
-    password: serpro123
+    url: postgres://aotskxpuvtodbt:450828aebd8f2e92f38a34862a81ba55d07ae5eddc89c1e73404f63eb369afd1@ec2-54-167-152-185.compute-1.amazonaws.com:5432/d20u11m3ka1agm
+    username: aotskxpuvtodbt
+    password: 450828aebd8f2e92f38a34862a81ba55d07ae5eddc89c1e73404f63eb369afd1
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    genereate-ddl: false
+    genereate-ddl: true
     hibernate:
       ddl-auto: none
 
