@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /bootcamp
+    
+
+spring:
+  datasource:    
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://10.31.22.198:5432/postgres
+    username: psp_dba
+    password: serpro123
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    genereate-ddl: false
+    hibernate:
+      ddl-auto: none
+
+app:
+  description: Projeto bootcamp Angular+java
