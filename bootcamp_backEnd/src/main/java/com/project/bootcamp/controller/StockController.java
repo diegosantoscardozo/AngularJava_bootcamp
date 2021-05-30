@@ -2,6 +2,8 @@ package com.project.bootcamp.controller;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -30,9 +32,13 @@ public class StockController {
 	private StockService bc;
 	
 	@PostMapping(consumes = APPLICATION_JSON_VALUE,  produces = APPLICATION_JSON_VALUE)
-	public ResponseEntity<StockDTO> save(@Valid @RequestBody StockDTO dto){	
+	public ResponseEntity<StockDTO> save(@Valid @RequestBody StockDTO dto){
+//		dto.setId(5L);
+//		return ResponseEntity.ok(dto);
+		
 		return ResponseEntity.ok(bc.save(dto));		
 	}
+	
 	
 	
 	@PutMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
@@ -43,16 +49,17 @@ public class StockController {
 	@GetMapping(produces = APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<StockDTO>> findAll(){
 		
-//		List<StockDTO> lista = new ArrayList<>();
-//		StockDTO dto = new StockDTO();
-//		dto.setId(1L);
-//		dto.setName("teste");
-//		dto.setDate(LocalDate.now());
-//		dto.setPrice(100D);
-//		dto.setVariation(100D);
-//		lista.add(dto);		
-//		return ResponseEntity.ok(lista);
-		return ResponseEntity.ok(bc.findAll());
+		List<StockDTO> lista = new ArrayList<>();
+		StockDTO dto = new StockDTO();
+		dto.setId(1L);
+		dto.setName("teste");
+		dto.setDate(LocalDate.now());
+		dto.setPrice(100D);
+		dto.setVariation(100D);
+		lista.add(dto);		
+		return ResponseEntity.ok(lista);
+		
+		//return ResponseEntity.ok(bc.findAll());
 	}
 	
 	
